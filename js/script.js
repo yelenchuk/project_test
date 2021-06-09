@@ -67,12 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         </li>`;
     });
 
-    parent.childNodes.forEach((child) => {
+    parent.childNodes.forEach((child, i) => {
       child.addEventListener("click", (event) => {
         if (event.target.className == "delete") {
-          //child.remove();
-          console.log(parent);
-          movieDB.movies.splice(child, 1); //изменяет содержимое массива, удаляя существующие элементы и/или добавляя новые
+          child.remove();
+          movieDB.movies.splice(i, 1); //изменяет содержимое массива, удаляя существующие элементы и/или добавляя новые
         }
         createMovieLIst(films, parent);
       });
