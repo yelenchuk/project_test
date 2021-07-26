@@ -10,7 +10,9 @@ class Car {
 
   showCar = () => {
     console.log(
-      `Автомобиль марки: ${this.model} ${this.engine},скорость ${this._speed} км/ч`
+      `Автомобиль марки: ${this.model} ${this.#engine},скорость ${
+        this._speed
+      } км/ч`
     );
   };
 
