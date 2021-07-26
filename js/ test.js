@@ -9,12 +9,12 @@ class User {
   }
 
   //surname = "Ivanov"; // св-во объекта вне конструктора
-  surname = "Ivanov"; // # делает св-во приватным
+  #surname = "Ivanov"; // # делает св-во приватным
 
   // методы можем задать в качестве => чтобы не терять контекст(контекстом будет определенный экземпляр класса - новый объект)
   say = () => {
     console.log(
-      `Имя пользователя: ${this.name}${this.surname}, возраст ${this._age}`
+      `Имя пользователя: ${this.name}${this.#surname}, возраст ${this._age}`
     );
   };
 
@@ -33,8 +33,8 @@ class User {
   }
 }
 const ivan = new User("Ivan", 27);
-// console.log(ivan.age); // get
-// ivan.age = 99; // set
-// console.log(ivan.age);
+console.log(ivan.age); // get
+ivan.age = 99; // set
+console.log(ivan.age);
 console.log(ivan.sername); // undefined
 ivan.say();
